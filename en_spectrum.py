@@ -75,9 +75,10 @@ def ev(h):
 
 
 # read model parameters
-para = open('para_model', 'r')
+para = open('para_model.txt', 'r')
 para = para.readlines()
 L, j, t1, t2 = int(para[0]), float(para[1]), float(para[2]), float(para[3]) 
+
 # generate Hamiltonian and running the calculation
 h = ham(L,j,t1,t2)
 result=ev(h)
