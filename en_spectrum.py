@@ -60,12 +60,12 @@ def ev(h):
     en, wave = eigh(h_dense)
     p=int(0.1*2**(L-1))
     wav = wave[p:-p] #discard the largest and smallest 10% eigenstates to improve accuray, see RPB 95, 245134 for details
-    es = np.zeros((len(wav),int(2**(L//2))), dtype='float64')
+    es = np.zeros((len(wav),int(2**(L//2+1))), dtype='float64')
     basis = spinless_fermion_basis_1d(L=L,Nf=range(0,L+1,2)) #even number sector   
     #calculate the half-chain entanglement spectrum for all selected eigenstates
     for i in range(len(wav)):
         ps=wav[i,:]
-        S = basis.ent_entropy(ps,sub_sys_A=tuple(range(L//2)), density=False, return_rdm="A")
+        S = basis.ent_entropy(ps,sub_sys_A=tuple(range(L//2+1)), density=False, return_rdm="A")
         rdm_A = S["rdm_A"]
         es[i] = -eigh(np.log(rdm_A),eigvals_only=True) #entanglement spectrum
     ind = len(wave)//2   
