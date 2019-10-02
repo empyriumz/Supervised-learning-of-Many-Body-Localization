@@ -8,7 +8,7 @@ where the system is in MBL phase when the interaction is weak (J/t<<1) and in ET
 
 # Requirement
 Python 3.5+
-
+Numpy
 Tensorflow, Keras and scikit-learn
 
 [Quspin](https://github.com/weinbe58/QuSpin) (Powerful numerical exact-diagonalization package for 1D systems)
