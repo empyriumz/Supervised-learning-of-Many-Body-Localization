@@ -9,7 +9,7 @@ where the system is in MBL phase when the interaction is weak (J/t<<1) and in ET
 # Requirement
 Python 3.5+
 
-Numpy
+NumPy
 
 Tensorflow, Keras and scikit-learn
 
