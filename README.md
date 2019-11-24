@@ -1,7 +1,7 @@
 # Work in progress
 
 # Supervised-learning-of-Many-Body-Localization
-A simple neural network structure to classify many-body localized and thermalized phases using entanglement spectrum as the input data. This project is inspired by the great machine learning [review paper](https://arxiv.org/abs/1803.08823) by Mehta et. al and the accompanying jupyter notebooks.
+A simple neural network structure to classify many-body localized and thermalized phases using entanglement spectrum as the input data. This project is inspired by a great machine learning [review paper](https://arxiv.org/abs/1803.08823) by Mehta et. al and the accompanying jupyter notebooks.
 
 With moderate amount of data (O(10^4) entries), the classifier achieves nearly 100% accuracy on the test set.
 
