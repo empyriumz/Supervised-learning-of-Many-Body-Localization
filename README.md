@@ -1,3 +1,5 @@
+# Work in progress
+
 # Supervised-learning-of-Many-Body-Localization
 A simple neural network structure to classify many-body localized and thermalized phases using entanglement spectrum as the input data. This project is inspired by the great machine learning [review paper](https://arxiv.org/abs/1803.08823) by Mehta et. al and the accompanying jupyter notebooks.
 
@@ -11,6 +13,6 @@ Python 3.5+
 
 NumPy
 
-Tensorflow, Keras and scikit-learn
+Tensorflow (using Keras API) and scikit-learn
 
 [Quspin](https://github.com/weinbe58/QuSpin) (Powerful numerical exact-diagonalization package for 1D systems)
