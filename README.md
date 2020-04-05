@@ -9,6 +9,12 @@ With moderate amount of data (O(10^4) entries), the classifier achieves nearly 1
 The example Hamiltonian is taken from this [paper](https://link.aps.org/doi/10.1103/PhysRevB.100.235144),
 where the system is in MBL phase when the interaction is weak (J/t<<1) and in ETH phase otherwise.
 
+---
+The strategy for establishing the phase diagram as a function of interaction strength j is:
+* first train the model (a binary classifier) using the data deep in the two phases
+* evaluate the model using different j to see its accurary
+* the phase boundary happens where the classifier fails
+
 ## Requirement
 Python 3.5+
 
@@ -16,5 +22,5 @@ NumPy
 
 Tensorflow (using Keras API) and scikit-learn
 
-[Keras Tuner](Keras Tuner) for hyperparameter tuning
+[Keras Tuner](https://keras-team.github.io/keras-tuner/) for hyperparameter tuning
 [Quspin](https://github.com/weinbe58/QuSpin) (Powerful numerical exact-diagonalization package for 1D systems)
