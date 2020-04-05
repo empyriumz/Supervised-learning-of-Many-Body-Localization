@@ -12,7 +12,7 @@ where the system is in MBL phase when the interaction is weak (J/t<<1) and in ET
 ---
 The strategy for establishing the phase diagram as a function of interaction strength j is:
 * first train the model (a binary classifier) using the data deep in the two phases
-* evaluate the model using different j to see its accurary
+* evaluate the model using different j to see its accuracy
 * the phase boundary happens where the classifier fails
 
 ## Requirement
