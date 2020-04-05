@@ -56,15 +56,15 @@ def level(e): #calculate the energy level statistics
 
 #entanglement spectrum for 80% of the total eigenstates
 def ev(h):
-    h_dense=h.todense() #convert h into dense matrix for fully diagonalization
+    h_dense = h.todense() #convert h into dense matrix for fully diagonalization
     en, wave = eigh(h_dense)
-    p=int(0.1*2**(L-1))
+    p = int(0.1*2**(L-1))
     wav = wave[p:-p] #discard the largest and smallest 10% eigenstates to improve accuray, see RPB 95, 245134 for details
     es = np.zeros((len(wav),int(2**(L//2+1))), dtype='float64')
     basis = spinless_fermion_basis_1d(L=L,Nf=range(0,L+1,2)) #even number sector   
     #calculate the half-chain entanglement spectrum for all selected eigenstates
     for i in range(len(wav)):
-        ps=wav[i,:]
+        ps = wav[i,:]
         S = basis.ent_entropy(ps,sub_sys_A=tuple(range(L//2+1)), density=False, return_rdm="A")
         rdm_A = S["rdm_A"]
         es[i] = -eigh(np.log(rdm_A),eigvals_only=True) #entanglement spectrum
@@ -81,11 +81,11 @@ L, j, t1, t2 = int(para[0]), float(para[1]), float(para[2]), float(para[3])
 
 # generate Hamiltonian and running the calculation
 h = ham(L,j,t1,t2)
-result=ev(h)
+result = ev(h)
 # generate random bytes to name the output file
 # it's a workaround for unability to read the current file name
 x=np.random.bytes(12)
 # save the output into compressed npz file
-np.savez_compressed('%s_en_spectrum_L=%s_j=%s'%(x,L,j), ent=result[0], en=result[1], levelstat=result[2], wave=result[3])
+np.savez_compressed('%s_en_spectrum_L=%s_j=%s'%(x,L,j), j=j, ent=result[0], en=result[1], levelstat=result[2], wave=result[3])
 end = timer()
 print("Elapsed = %s" % (end - start))
